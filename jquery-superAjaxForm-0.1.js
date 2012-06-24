@@ -32,10 +32,8 @@
 						xhr.responseText;
 					
 					if (settings.responseHandlers[xhr.status]){
-						console.log('status:'+xhr.status);
 						settings.responseHandlers[xhr.status](response);
 					} else {
-						console.log('puesaqui');
 						settings.responseHandlers.fallback(response);
 					}
 				}
@@ -85,8 +83,6 @@
 						builder += 'Content-type: multipart/mixed, boundary='+localBoundary+crlf+crlf;
 						for(var j=0; j<num_files; j++){
 							var input_file = input_files[j];
-							console.log(input_files);
-							console.log(input_file);
 							builder += dashdash+localBoundary+crlf;
 							builder += 'Content-disposition: attachment; filename="'+unescape(encodeURIComponent(methods.getfilename(input_file)))+'"'+crlf;
 							builder += 'Content-Type: application/octet-stream'+crlf;
