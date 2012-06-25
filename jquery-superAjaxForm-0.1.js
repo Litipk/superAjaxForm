@@ -110,7 +110,22 @@
 				}
 				xhr.sendAsBinary(builder);
 			} else {
-				
+				// Fallback: We try to send at least all fields except files
+				$.ajax({
+					type: 'POST',
+					data: $(this).serialize(),
+					dataType: (settings.responseType=='json')?'json':'html',
+					url: $(this).attr('action'),
+					success: function(msg){
+						settings.responseHandlers[200](msg);
+					},
+					error: function (xhr, ajaxOptions, thrownError) {
+						var msg = (settings.responseType=='json')?
+							$.parseJSON(xhr.responseText):
+							xhr.responseText;
+						settings.responseHandlers.fallback(msg);
+					}
+				});
 			}
 		},
 		onprogress: function(evt){
