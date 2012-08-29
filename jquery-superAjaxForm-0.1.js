@@ -80,7 +80,7 @@
 						var localBoundary = '--'+methods.randomstring(10)+'--';
 						builder += dashdash+boundary+crlf;
 						builder += 'Content-disposition: form-data; name="'+file_input.attr('name')+'";'+crlf;
-						builder += 'Content-type: multipart/mixed, boundary='+localBoundary+crlf+crlf;
+						builder += 'Content-type: multipart/mixed; boundary='+localBoundary+crlf+crlf;
 						for(var j=0; j<num_files; j++){
 							var input_file = input_files[j];
 							builder += dashdash+localBoundary+crlf;
