@@ -96,7 +96,7 @@
 				
 				// End
 				builder += dashdash+boundary+dashdash+crlf;
-				xhr.setRequestHeader('content-type', 'multipart/form-data; boundary=' + boundary);
+				xhr.setRequestHeader('Content-type', 'multipart/form-data; boundary=' + boundary);
 				
 				if (!xhr.sendAsBinary) {
 					XMLHttpRequest.prototype.sendAsBinary = function(datastr) {
