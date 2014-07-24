@@ -3,7 +3,7 @@ superAjaxForm
 
 jQuery plugin that allows sending forms via AJAX (including files!)
 
-[Documentation](https://github.com/Litipk/superAjaxForm/wiki)
+To use it, it's recommendable to read the [documentation](https://github.com/Litipk/superAjaxForm/wiki/Documentation).
 
 License
 -------
